@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Peringatan Ulang Tahun 🚨</title>
+    <!-- Tailwind CSS untuk Desain -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Lucu dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Script Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #ffe4e6; /* Warna pink pastel */
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Efek deg-degan untuk hati */
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        .heart-animate {
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+        /* Tombol yang bisa kabur */
+        #btn-kado {
+            transition: all 0.2s ease-out;
+        }
+        .hidden-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        .visible-section {
+            display: flex;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 text-gray-800">
+
+    <!-- BAGIAN 1: VERIFIKASI -->
+    <section id="section-1" class="visible-section flex-col items-center text-center max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-pink-300">
+        <div class="text-6xl mb-4">🛑</div>
+        <h1 class="text-3xl text-pink-500 mb-4">Sistem Keamanan Ketat</h1>
+        <p class="mb-6 text-lg">Sistem mendeteksi ada wanita cantik yang sedang bertambah usia hari ini. Jawab jujur untuk melanjutkan:</p>
+        <p class="font-bold mb-4 text-xl">Siapa yang paling ngangenin sedunia?</p>
+        
+        <div class="flex flex-col w-full gap-3">
+            <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Artis Korea</button>
+            <button onclick="nextSection(2)" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Aku dong! 🙋‍♀️</button>
+            <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Kucing tetangga</button>
+        </div>
+    </section>
+
+    <!-- BAGIAN 2: TOMBOL KABUR -->
+    <section id="section-2" class="hidden-section flex-col items-center text-center w-full h-full absolute top-0 left-0 bg-[#ffe4e6] justify-center p-4 z-10">
+        <div class="max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-pink-300 relative">
+            <h2 class="text-3xl text-pink-500 mb-4">Verifikasi Berhasil! 🔓</h2>
+            <p class="mb-8 text-lg">Silakan ambil kado virtual spesial dari pacarmu yang tampan ini. Tinggal klik tombol di bawah kok, gampang kan?</p>
+            
+            <div class="h-40 relative flex justify-center items-center w-full">
+                <!-- Tombol Ngeselin -->
+                <button id="btn-kado" class="absolute bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full shadow-xl text-xl z-20">
+                    🎁 Klik Ambil Kado
+                </button>
+            </div>
+
+            <!-- Tombol Bantuan (Muncul setelah dia frustrasi) -->
+            <button id="btn-nyerah" onclick="showFinal()" class="hidden mt-8 text-gray-500 underline hover:text-pink-500 transition">
+                Nyerah deh nyerah, pencet ini aja 😭
+            </button>
+        </div>
+    </section>
+
+    <!-- BAGIAN 3: UCAPAN FINAL -->
+    <section id="section-3" class="hidden-section flex-col items-center text-center max-w-2xl bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-pink-400 z-30 relative overflow-hidden">
+        <!-- Dekorasi Background -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300"></div>
+        
+        <div class="text-7xl mb-4 heart-animate">❤️</div>
+        <h1 class="text-4xl md:text-5xl text-pink-600 mb-6 leading-tight">Selamat Ulang Tahun<br>Sayangku! 🎉🎂</h1>
+        
+        <div class="bg-pink-50 p-6 rounded-2xl mb-8 border border-pink-200 text-left">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+                Maaf ya kalau websitenya agak ngeselin, soalnya yang bikin juga kadang ngeselin (tapi kamu sayang kan? hehe). 😜
+            </p>
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+                Di hari spesial kamu ini, aku cuma mau bilang makasih udah jadi orang yang luar biasa sabar ngadepin aku. Semoga semua yang kamu semogakan bisa terwujud, makin cantik, makin sukses, dan yang pasti... makin sayang sama aku!
+            </p>
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-bold text-pink-500 text-center mt-6">
+                I Love You 3000! 💖
+            </p>
+        </div>
+        
+        <p class="text-sm text-gray-400 italic">P.S: Tagih kado aslinya pas kita ketemu ya! (kalo aku ngga lupa 😂)</p>
+    </section>
+
+    <!-- Script Logika Website -->
+    <script>
+        // --- Logika Navigasi Halaman ---
+        function nextSection(sectionNum) {
+            // Sembunyikan semua section
+            document.querySelectorAll('section').forEach(sec => {
+                sec.classList.remove('visible-section');
+                sec.classList.add('hidden-section');
+            });
+            // Tampilkan section yang dituju
+            const target = document.getElementById('section-' + sectionNum);
+            target.classList.remove('hidden-section');
+            target.classList.add('visible-section');
+
+            // Jika masuk ke bagian kado, aktifkan tombol kabur
+            if(sectionNum === 2) {
+                initRunawayButton();
+            }
+        }
+
+        // --- Logika Tombol Salah ---
+        function wrongAnswer() {
+            alert("TETOT! Jawaban salah. Masa gitu aja gatau sih? 😤 Coba lagi!");
+        }
+
+        // --- Logika Tombol Kabur ---
+        let dodgeCount = 0;
+        const btnKado = document.getElementById('btn-kado');
+        const btnNyerah = document.getElementById('btn-nyerah');
+
+        function initRunawayButton() {
+            // Berfungsi untuk mouse (laptop) dan sentuhan (HP)
+            btnKado.addEventListener('mouseover', moveButton);
+            btnKado.addEventListener('touchstart', function(e) {
+                e.preventDefault(); // Mencegah klik di HP
+                moveButton();
+            });
+            
+            // Kalau dia ajaib berhasil ngeklik
+            btnKado.addEventListener('click', function() {
+                showFinal();
+            });
+        }
+
+        function moveButton() {
+            dodgeCount++;
+            
+            // Lebar dan tinggi area layar
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // Ukuran tombol
+            const btnWidth = btnKado.offsetWidth;
+            const btnHeight = btnKado.offsetHeight;
+            
+            // Hitung posisi random (dikurangi ukuran tombol agar tidak keluar layar)
+            const randomX = Math.floor(Math.random() * (windowWidth - btnWidth));
+            const randomY = Math.floor(Math.random() * (windowHeight - btnHeight));
+            
+            // Ubah tombol jadi fixed agar bebas bergerak di layar
+            btnKado.style.position = 'fixed';
+            btnKado.style.left = randomX + 'px';
+            btnKado.style.top = randomY + 'px';
+
+            // Ganti teks tombol biar makin ngeselin
+            const texts = ["Eits, gak kena! 😝", "Kurang cepet! 🏃‍♀️", "Sini dong! 😂", "Wleee 😛", "Ayo coba lagi!"];
+            btnKado.innerText = texts[Math.floor(Math.random() * texts.length)];
+
+            // Munculkan tombol nyerah setelah 5 kali kabur
+            if(dodgeCount >= 5) {
+                btnNyerah.classList.remove('hidden');
+                btnNyerah.classList.add('inline-block', 'animate-bounce');
+            }
+        }
+
+        // --- Logika Halaman Final & Confetti ---
+        function showFinal() {
+            nextSection(3);
+            fireConfetti();
+        }
+
+        function fireConfetti() {
+            // Durasi confetti 3 detik
+            const duration = 3 * 1000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            const interval = setInterval(function() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+                
+                // Ledakan dari kiri dan kanan
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        }
+    </script>
+</body>
+</html>
