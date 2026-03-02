@@ -14,7 +14,7 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background-color: #ffe4e6; /* Warna pink pastel */
+            background-color: #2e87e5; /* Warna blue pastel */
             overflow-x: hidden;
         }
         h1, h2, h3 {
@@ -42,65 +42,85 @@
             display: flex;
             opacity: 1;
         }
+        /* Efek melayang untuk foto */
+        .hover-float {
+            transition: transform 0.3s ease;
+        }
+        .hover-float:hover {
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center p-4 text-gray-800">
 
     <!-- BAGIAN 1: VERIFIKASI -->
-    <section id="section-1" class="visible-section flex-col items-center text-center max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-pink-300">
+    <section id="section-1" class="visible-section flex-col items-center text-center max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-blue-300">
         <div class="text-6xl mb-4">🛑</div>
-        <h1 class="text-3xl text-pink-500 mb-4">Sistem Keamanan Ketat</h1>
+        
+        <!-- FOTO DIA (Halaman Depan) -->
+        <!-- Ganti 'https://via.placeholder.com/150/ffb6c1/ffffff?text=Foto+Dia' dengan nama file fotonya, misal: 'foto-dia.jpg' -->
+        <img src="Images/IMG-20260216-WA0005.jpg.jpeg" alt="Foto Pacar" class="w-32 h-32 rounded-full border-4 border-blue-400 mx-auto mb-4 object-cover shadow-md hover-float">
+        
+        <h1 class="text-3xl text-blue-500 mb-4">Sistem Keamanan Ketat</h1>
         <p class="mb-6 text-lg">Sistem mendeteksi ada wanita cantik yang sedang bertambah usia hari ini. Jawab jujur untuk melanjutkan:</p>
         <p class="font-bold mb-4 text-xl">Siapa yang paling ngangenin sedunia?</p>
         
         <div class="flex flex-col w-full gap-3">
             <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Artis Korea</button>
-            <button onclick="nextSection(2)" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Aku dong! 🙋‍♀️</button>
+            <button onclick="nextSection(2)" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Aku dong! 🙋‍♀️</button>
             <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Kucing tetangga</button>
         </div>
     </section>
 
     <!-- BAGIAN 2: TOMBOL KABUR -->
     <section id="section-2" class="hidden-section flex-col items-center text-center w-full h-full absolute top-0 left-0 bg-[#ffe4e6] justify-center p-4 z-10">
-        <div class="max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-pink-300 relative">
-            <h2 class="text-3xl text-pink-500 mb-4">Verifikasi Berhasil! 🔓</h2>
+        <div class="max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-blue-300 relative">
+            <h2 class="text-3xl text-blue-500 mb-4">Verifikasi Berhasil! 🔓</h2>
             <p class="mb-8 text-lg">Silakan ambil kado virtual spesial dari pacarmu yang tampan ini. Tinggal klik tombol di bawah kok, gampang kan?</p>
             
             <div class="h-40 relative flex justify-center items-center w-full">
                 <!-- Tombol Ngeselin -->
-                <button id="btn-kado" class="absolute bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full shadow-xl text-xl z-20">
+                <button id="btn-kado" class="absolute bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-4 px-8 rounded-full shadow-xl text-xl z-20">
                     🎁 Klik Ambil Kado
                 </button>
             </div>
 
             <!-- Tombol Bantuan (Muncul setelah dia frustrasi) -->
-            <button id="btn-nyerah" onclick="showFinal()" class="hidden mt-8 text-gray-500 underline hover:text-pink-500 transition">
+            <button id="btn-nyerah" onclick="showFinal()" class="hidden mt-8 text-gray-500 underline hover:text-blue-500 transition">
                 Nyerah deh nyerah, pencet ini aja 😭
             </button>
         </div>
     </section>
 
     <!-- BAGIAN 3: UCAPAN FINAL -->
-    <section id="section-3" class="hidden-section flex-col items-center text-center max-w-2xl bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-pink-400 z-30 relative overflow-hidden">
+    <section id="section-3" class="hidden-section flex-col items-center text-center max-w-2xl bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-blue-400 z-30 relative overflow-hidden">
         <!-- Dekorasi Background -->
-        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300"></div>
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-300 via-purple-300 to-blue-300"></div>
         
-        <div class="text-7xl mb-4 heart-animate">❤️</div>
-        <h1 class="text-4xl md:text-5xl text-pink-600 mb-6 leading-tight">Selamat Ulang Tahun<br>Sayangku! 🎉🎂</h1>
+        <!-- FOTO BERDUA (Saling tumpang tindih ala romantis) -->
+        <div class="flex justify-center items-center mb-4 -space-x-6">
+            <!-- Ganti src dengan fotomu -->
+            <img src="https://via.placeholder.com/150/87cefa/ffffff?text=Foto+Kamu" alt="Foto Kamu" class="w-28 h-28 rounded-full border-4 border-white shadow-xl object-cover z-10 relative hover-float hover:z-30">
+            <!-- Ganti src dengan fotonya -->
+            <img src="https://via.placeholder.com/150/ffb6c1/ffffff?text=Foto+Dia" alt="Foto Pacar" class="w-28 h-28 rounded-full border-4 border-white shadow-xl object-cover z-20 relative hover-float">
+        </div>
+
+        <div class="text-6xl mb-2 heart-animate">❤️</div>
+        <h1 class="text-4xl md:text-5xl text-blue-600 mb-6 leading-tight">Selamat Ulang Tahun<br>Sayangku! 🎉🎂</h1>
         
-        <div class="bg-pink-50 p-6 rounded-2xl mb-8 border border-pink-200 text-left">
+        <div class="bg-blue-50 p-6 rounded-2xl mb-8 border border-blue-200 text-left">
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
                 Maaf ya kalau websitenya agak ngeselin, soalnya yang bikin juga kadang ngeselin (tapi kamu sayang kan? hehe). 😜
             </p>
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
                 Di hari spesial kamu ini, aku cuma mau bilang makasih udah jadi orang yang luar biasa sabar ngadepin aku. Semoga semua yang kamu semogakan bisa terwujud, makin cantik, makin sukses, dan yang pasti... makin sayang sama aku!
             </p>
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-bold text-pink-500 text-center mt-6">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-bold text-blue-500 text-center mt-6">
                 I Love You 3000! 💖
             </p>
         </div>
         
-        <p class="text-sm text-gray-400 italic">P.S: Tagih kado aslinya pas kita ketemu ya! (kalo aku ngga lupa 😂)</p>
+        <p class="text-sm text-gray-400 italic">P.S: Tagih kado aslinya pas kita ketemu ya! (kalo aku ngga lupa xixixi)</p>
     </section>
 
     <!-- Script Logika Website -->
@@ -172,7 +192,7 @@
             btnKado.innerText = texts[Math.floor(Math.random() * texts.length)];
 
             // Munculkan tombol nyerah setelah 5 kali kabur
-            if(dodgeCount >= 5) {
+            if(dodgeCount >= 35) {
                 btnNyerah.classList.remove('hidden');
                 btnNyerah.classList.add('inline-block', 'animate-bounce');
             }
