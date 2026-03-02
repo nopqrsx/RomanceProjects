@@ -14,8 +14,12 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background-color: #2e87e5; /* Warna blue pastel */
+            /* background-color: #ffe4e6; dihapus dan diganti dengan gambar */
             overflow-x: hidden;
+            background-image: url('Images/3.png');
+            background-size: auto;
+            background-position: center;
+            background-attachment: fixed;
         }
         h1, h2, h3 {
             font-family: 'Fredoka One', cursive;
@@ -52,23 +56,26 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center p-4 text-gray-800">
-
+    <div class="fixed inset-0 bg-white/25 backdrop-blur-sm z-[-1]"></div>
     <!-- BAGIAN 1: VERIFIKASI -->
-    <section id="section-1" class="visible-section flex-col items-center text-center max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-blue-300">
-        <div class="text-6xl mb-4">🛑</div>
-        
-        <!-- FOTO DIA (Halaman Depan) -->
-        <!-- Ganti 'https://via.placeholder.com/150/ffb6c1/ffffff?text=Foto+Dia' dengan nama file fotonya, misal: 'foto-dia.jpg' -->
-        <img src="Images/IMG-20260216-WA0005.jpg.jpeg" alt="Foto Pacar" class="w-32 h-32 rounded-full border-4 border-blue-400 mx-auto mb-4 object-cover shadow-md hover-float">
-        
-        <h1 class="text-3xl text-blue-500 mb-4">Sistem Keamanan Ketat</h1>
-        <p class="mb-6 text-lg">Sistem mendeteksi ada wanita cantik yang sedang bertambah usia hari ini. Jawab jujur untuk melanjutkan:</p>
-        <p class="font-bold mb-4 text-xl">Siapa yang paling ngangenin sedunia?</p>
-        
-        <div class="flex flex-col w-full gap-3">
-            <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Artis Korea</button>
-            <button onclick="nextSection(2)" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Aku dong! 🙋‍♀️</button>
-            <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Kucing tetangga</button>
+    <section id="section-1" class="visible-section flex-col items-center text-center w-full h-full absolute top-0 left-0 bg-[#4c8bf5] justify-center p-4 z-10">
+        <div class="flex-col items-center text-center max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-blue-300">
+            <div class="text-6xl mb-4">🛑</div>
+            
+            <!-- FOTO DIA (Halaman Depan) -->
+            <!-- Ganti 'https://via.placeholder.com/150/ffb6c1/ffffff?text=Foto+Dia' dengan nama file fotonya, misal: 'foto-dia.jpg' -->
+            <img src="Images/IMG-20260216-WA0005.jpg.jpeg" alt="Foto Pacar" class="w-32 h-32 rounded-full border-4 border-blue-400 mx-auto mb-4 object-cover shadow-md hover-float">
+            
+            <h1 class="text-3xl text-blue-500 mb-4">Sistem Keamanan Ketat</h1>
+            <p class="mb-6 text-lg">Sistem mendeteksi ada wanita cantik yang sedang bertambah usia hari ini.</p>
+            <p class="mb-6 text-lg">Jawab jujur untuk melanjutkan:</p>
+            <p class="font-bold mb-4 text-xl">Siapa yang paling ngangenin sedunia?</p>
+            
+            <div class="flex flex-col w-full gap-3">
+                <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Kasur 🛏️</button>
+                <button onclick="nextSection(2)" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300">Aku dong! 🙋‍♀️</button>
+                <button onclick="wrongAnswer()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-full transition duration-300">Mochi 🐹</button>
+            </div>
         </div>
     </section>
 
@@ -76,7 +83,7 @@
     <section id="section-2" class="hidden-section flex-col items-center text-center w-full h-full absolute top-0 left-0 bg-[#4c8bf5] justify-center p-4 z-10">
         <div class="max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-blue-300 relative">
             <h2 class="text-3xl text-blue-500 mb-4">Verifikasi Berhasil! 🔓</h2>
-            <p class="mb-8 text-lg">Silakan ambil kado virtual spesial dari pacarmu yang tampan ini. Klik tombol di bawah, gampang kan?</p>
+            <p class="mb-8 text-lg">Ayo di ambil kado spesial dari pacarmu yang tampan ini. Klik tombol di bawah, gampang kan?</p>
             
             <div class="h-40 relative flex justify-center items-center w-full">
                 <!-- Tombol Ngeselin -->
@@ -93,10 +100,10 @@
     </section>
 
     <!-- BAGIAN 3: UCAPAN FINAL -->
-    <section id="section-3" class="hidden-section flex-col items-center text-center max-w-2xl p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-pink-400 z-30 relative overflow-hidden" style="background-image: url('Images/IMG_20260109_234237_907.webp'); background-size: cover; background-position: center;">
+    <section id="section-3" class="hidden-section flex-col items-center text-center max-w-2xl p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-pink-400 z-30 relative overflow-hidden" style="background-image: url('Images/IMG_20250304_201324.jpg'); background-size: cover; background-position: center;">
         
         <!-- OVERLAY KACA BURAM: Agar background foto terlihat tapi teks tetap jelas terbaca -->
-        <div class="absolute inset-0 bg-white/70 backdrop-blur-sm z-0"></div>
+        <div class="absolute inset-0 bg-white/50 backdrop-blur-sm z-0"></div>
 
         <!-- Dekorasi Background -->
         <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 z-10"></div>
@@ -115,7 +122,7 @@
                     Di hari spesial ini, aku cuma mau bilang makasih udah jadi orang yang luar biasa sabar ngadepin aku.
                 </p>
                 <p class="text-lg md:text-xl text-gray-800 font-medium leading-relaxed mb-4">
-                    Selamat Ulang Tahun Angel sayangku cintaku 💖 Semoga semua yang bebe doakan dan rencanakan bisa terwujud, makin cantik, sukses selalu, sehat selalu dan yang pasti... makin sayang sama aku!
+                    Selamat Ulang Tahun Angel sayangku cintaku 💖 Semoga semua yang bebe doakan dan rencanakan bisa terwujud, makin cantik, sukses dan sehat selalu serta yang pasti... makin sayang sama aku!
                 </p>
                 <p class="text-lg md:text-xl leading-relaxed font-bold text-pink-600 text-center mt-6">
                     I Love You Babeeeee 💖
@@ -124,6 +131,51 @@
             
             <p class="text-sm text-gray-800 font-bold italic drop-shadow-md">P.S: Tagih kado aslinya pas kita ketemu ya! (kalo aku ngga lupa 😂)</p>
         </div>
+        </div>
+<div class="relative z-10 flex flex-col items-center w-full">
+            <!-- ============================== -->
+            <!-- GALERI FOTO BERSAMA (FEED)     -->
+            <!-- ============================== -->
+            <div class="w-full mt-8 border-t-2 border-pink-300/50 pt-10">
+                <h2 class="text-3xl text-pink-700 font-bold mb-6 drop-shadow-md">Kenanganmu 📸</h2>
+                
+                <!-- Grid: 2 kolom di HP, 3 kolom di layar agak besar -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    
+                    <!-- Foto 1 -->
+                    <!-- Ganti src dengan nama file fotomu, misal: 'Images/foto1.jpg' -->
+                    <div class="overflow-hidden rounded-xl shadow-md border-2 border-white hover-float bg-white/50 p-1">
+                        <img src="Images/20240817_095945.jpg" alt="Kenangan 1" class="w-full aspect-square object-cover rounded-lg">
+                    </div>
+                    
+                    <!-- Foto 2 -->
+                    <div class="overflow-hidden rounded-xl shadow-md border-2 border-white hover-float bg-white/50 p-1">
+                        <img src="Images/IMG_20240915_104552.jpg" alt="Kenangan 2" class="w-full aspect-square object-cover rounded-lg">
+                    </div>
+                    
+                    <!-- Foto 3 -->
+                    <div class="overflow-hidden rounded-xl shadow-md border-2 border-white hover-float bg-white/50 p-1">
+                        <img src="Images/IMG_20250306_105248.jpg" alt="Kenangan 3" class="w-full aspect-square object-cover rounded-lg">
+                    </div>
+                    
+                    <!-- Foto 4 -->
+                    <div class="overflow-hidden rounded-xl shadow-md border-2 border-white hover-float bg-white/50 p-1">
+                        <img src="Images/ANGLE 182.JPG" alt="Kenangan 4" class="w-full aspect-square object-cover rounded-lg">
+                    </div>
+                    
+                    <!-- Foto 5 -->
+                    <div class="overflow-hidden rounded-xl shadow-md border-2 border-white hover-float bg-white/50 p-1">
+                        <img src="Images/ANGLE 451.JPG" alt="Kenangan 5" class="w-full aspect-square object-cover rounded-lg">
+                    </div>
+                    
+                    <!-- Foto 6 -->
+                    <div class="overflow-hidden rounded-xl shadow-md border-2 border-white hover-float bg-white/50 p-1">
+                        <img src="Images/ANGLE 265.JPG" alt="Kenangan 6" class="w-full aspect-square object-cover rounded-lg">
+                    </div>
+
+                </div>
+            </div>
+            <!-- Akhir Galeri Foto -->
     </section>
 
     <!-- Script Logika Website -->
@@ -209,7 +261,7 @@
 
         function fireConfetti() {
             // Durasi confetti 3 detik
-            const duration = 3 * 1000;
+            const duration = 5 * 1000;
             const animationEnd = Date.now() + duration;
             const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
 
