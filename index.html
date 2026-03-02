@@ -76,7 +76,7 @@
     <section id="section-2" class="hidden-section flex-col items-center text-center w-full h-full absolute top-0 left-0 bg-[#ffe4e6] justify-center p-4 z-10">
         <div class="max-w-lg bg-white p-8 rounded-3xl shadow-xl border-4 border-blue-300 relative">
             <h2 class="text-3xl text-blue-500 mb-4">Verifikasi Berhasil! 🔓</h2>
-            <p class="mb-8 text-lg">Silakan ambil kado virtual spesial dari pacarmu yang tampan ini. Tinggal klik tombol di bawah kok, gampang kan?</p>
+            <p class="mb-8 text-lg">Silakan ambil kado virtual spesial dari pacarmu yang tampan ini. Klik tombol di bawah, gampang kan?</p>
             
             <div class="h-40 relative flex justify-center items-center w-full">
                 <!-- Tombol Ngeselin -->
@@ -87,40 +87,40 @@
 
             <!-- Tombol Bantuan (Muncul setelah dia frustrasi) -->
             <button id="btn-nyerah" onclick="showFinal()" class="hidden mt-8 text-gray-500 underline hover:text-blue-500 transition">
-                Nyerah deh nyerah, pencet ini aja 😭
+                Nyerah? pencet ini aja 😭
             </button>
         </div>
     </section>
 
     <!-- BAGIAN 3: UCAPAN FINAL -->
-    <section id="section-3" class="hidden-section flex-col items-center text-center max-w-2xl bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-blue-400 z-30 relative overflow-hidden">
-        <!-- Dekorasi Background -->
-        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-300 via-purple-300 to-blue-300"></div>
+    <section id="section-3" class="hidden-section flex-col items-center text-center max-w-2xl p-8 md:p-12 rounded-3xl shadow-2xl border-4 border-pink-400 z-30 relative overflow-hidden" style="background-image: url('Images/IMG_20260109_234237_907.webp'); background-size: cover; background-position: center;">
         
-        <!-- FOTO BERDUA (Saling tumpang tindih ala romantis) -->
-        <div class="flex justify-center items-center mb-4 -space-x-6">
-            <!-- Ganti src dengan fotomu -->
-            <img src="https://via.placeholder.com/150/87cefa/ffffff?text=Foto+Kamu" alt="Foto Kamu" class="w-28 h-28 rounded-full border-4 border-white shadow-xl object-cover z-10 relative hover-float hover:z-30">
-            <!-- Ganti src dengan fotonya -->
-            <img src="https://via.placeholder.com/150/ffb6c1/ffffff?text=Foto+Dia" alt="Foto Pacar" class="w-28 h-28 rounded-full border-4 border-white shadow-xl object-cover z-20 relative hover-float">
-        </div>
+        <!-- OVERLAY KACA BURAM: Agar background foto terlihat tapi teks tetap jelas terbaca -->
+        <div class="absolute inset-0 bg-white/70 backdrop-blur-sm z-0"></div>
 
-        <div class="text-6xl mb-2 heart-animate">❤️</div>
-        <h1 class="text-4xl md:text-5xl text-blue-600 mb-6 leading-tight">Selamat Ulang Tahun<br>Sayangku! 🎉🎂</h1>
+        <!-- Dekorasi Background -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 z-10"></div>
         
-        <div class="bg-blue-50 p-6 rounded-2xl mb-8 border border-blue-200 text-left">
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-                Maaf ya kalau websitenya agak ngeselin, soalnya yang bikin juga kadang ngeselin (tapi kamu sayang kan? hehe). 😜
-            </p>
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-                Di hari spesial kamu ini, aku cuma mau bilang makasih udah jadi orang yang luar biasa sabar ngadepin aku. Semoga semua yang kamu semogakan bisa terwujud, makin cantik, makin sukses, dan yang pasti... makin sayang sama aku!
-            </p>
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-bold text-blue-500 text-center mt-6">
-                I Love You 3000! 💖
-            </p>
+        <!-- BUNGKUSAN KONTEN: Diberi relative dan z-10 agar posisinya di atas efek kaca buram -->
+        <div class="relative z-10 flex flex-col items-center w-full">
+            <div class="text-6xl mb-2 heart-animate">❤️</div>
+            <h1 class="text-4xl md:text-5xl text-pink-700 mb-6 leading-tight drop-shadow-md font-bold">Selamat Ulang Tahun<br>Sayangku! 🎉🎂</h1>
+            
+            <!-- KOTAK PESAN: Dibuat agak transparan (bg-white/80) -->
+            <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl mb-8 border border-pink-200 text-left shadow-lg w-full">
+                <p class="text-lg md:text-xl text-gray-800 font-medium leading-relaxed mb-4">
+                    Maaf ya kalau websitenya agak ngeselin, soalnya yang bikin juga kadang ngeselin (tapi kamu sayang kan? hehe). 😜
+                </p>
+                <p class="text-lg md:text-xl text-gray-800 font-medium leading-relaxed mb-4">
+                    Di hari spesial ini, aku cuma mau bilang makasih udah jadi orang yang luar biasa sabar ngadepin aku. Selamat Ulang Tahun Angel sayangku cintaku 💖 Semoga semua yang bebe doakan dan rencanakan bisa terwujud, makin cantik, sukses selalu, sehat selalu dan yang pasti... makin sayang sama aku!
+                </p>
+                <p class="text-lg md:text-xl leading-relaxed font-bold text-pink-600 text-center mt-6">
+                    I Love You Babeeeee 💖
+                </p>
+            </div>
+            
+            <p class="text-sm text-gray-800 font-bold italic drop-shadow-md">P.S: Tagih kado aslinya pas kita ketemu ya! (kalo aku ngga lupa 😂)</p>
         </div>
-        
-        <p class="text-sm text-gray-400 italic">P.S: Tagih kado aslinya pas kita ketemu ya! (kalo aku ngga lupa xixixi)</p>
     </section>
 
     <!-- Script Logika Website -->
